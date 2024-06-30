@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <title>VoiceChat</title>
+    <script src="responsivevoice.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>VOICE CHAT</h2>
+        <p>Klik tombol untuk mulai berbicara</p>
+        <div id="question"></div>
+        <p>
+            <button type="button" id="speakBtn" onclick="runSpeechRecognition()">Click</button> &nbsp; 
+            <span id="action"></span>
+        </p>
+        <div class="chat-container">
+            <div id="output" class="bubble user hide"></div>
+            <div id="response" class="bubble bot hide"></div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+body {
+    font-family: 'Courier New';
+    background: linear-gradient(to right, #6a67ce, #b5b4e3);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffffee;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    transition: all 0.3s ease;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #6a67ce;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+button.listening {
+    background-color: #ff6a6a;
+    transform: scale(1.1);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 106, 106, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 106, 106, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 106, 106, 0); }
+}
+
+.bubble {
+    position: relative;
+    background: #f1f0f0;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 10px;
+    text-align: left;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.bubble.user {
+    background: #e0f7fa;
+    align-self: flex-end;
+}
+
+.bubble.bot {
+    background: #e6e6fa;
+    align-self: flex-start;
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-bottom-color: #f1f0f0;
+    border-top: 0;
+    border-left: 0;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+.bubble.user::after {
+    left: auto;
+    right: 20px;
+    border-bottom-color: #e0f7fa;
+}
+
+.bubble.bot::after {
+    left: 20px;
+    border-bottom-color: #e6e6fa;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+#action {
+    font-size: 14px;
+    color: #999;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 25px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 14px;
+    }
+}
